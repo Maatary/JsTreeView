@@ -7,7 +7,7 @@ function setPoolPartyTreeBroswer($input){
 
     // Create the tree inside the <div id="tree"> element.
     $input.fancytree({
-            source: doPoolPartyGetChildrenAjaxRequest("http://thesaurus.iadb.org/publicthesauri/IdBDepartments"),
+            source: doPoolPartyGetChildrenAjaxRequest("http://thesaurus.iadb.org/publicthesauri/IdBTopics"),
 
             icons:false,
 
@@ -49,8 +49,9 @@ function setPoolPartyTreeBroswer($input){
 
             focusTree: function(event, data) {
                 console.log("in focusTree")
+                $(this).removeClass("fancytree-treefocus")
                 return false
-            },*/
+            }*/
 
 
 
@@ -75,7 +76,7 @@ function doPoolPartyGetChildrenAjaxRequest(parent) {
 
     return $.ajax({
 
-        url: "http://thesaurus.iadb.org/PoolParty/api/thesaurus/1DCE031A-B429-0001-49B6-15A028B01F5D/childconcepts",
+        url: "http://thesaurus.iadb.org/PoolParty/api/thesaurus/1DCE1204-1A66-0001-C169-8D70A28F1B09/childconcepts",
 
         data: {language: "en", parent: parent, properties: "skos:narrower"},
 
