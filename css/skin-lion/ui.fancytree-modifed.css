@@ -30,7 +30,7 @@ ul.fancytree-container {
   white-space: nowrap;
   padding: 3px;
   margin: 0;
-  background-color: white;
+  background-color: transparent !important ;
   border: none !important;
   overflow: auto;
   min-height: 0%;
