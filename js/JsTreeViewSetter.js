@@ -109,6 +109,17 @@ function doPoolPartyGetChildrenAjaxRequest(parent) {
                 }
             }
 
+            data.sort(function(a, b) {
+
+                if (a.prefLabel.toLowerCase() == b.prefLabel.toLowerCase())
+                    return 0;
+                if (a.prefLabel.toLowerCase() > b.prefLabel.toLowerCase())
+                    return 1;
+                else
+                    return -1
+
+            });
+
         }
     })
 }
