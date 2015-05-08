@@ -3,11 +3,43 @@
  */
 
 
-function setPoolPartyTreeBroswer($input){
+function setPoolPartyTreeBroswer($input, field){
 
+
+    switch(field) {
+        case "dc_contributor_author":
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBAuthors";
+            break;
+
+        case "dc_subject":
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBTopics";
+            break;
+
+        case "iadb_department":
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBDepartments";
+            break;
+
+        case "dc_contributor_institution":
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBInstitutions";
+            break;
+
+        case "dc_identifier_jel":
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBJelCodes";
+            break;
+
+        default :
+
+            var scheme = "http://thesaurus.iadb.org/publicthesauri/IdBCountries";
+
+    }
     // Create the tree inside the <div id="tree"> element.
     $input.fancytree({
-            source: doPoolPartyGetChildrenAjaxRequest("http://thesaurus.iadb.org/publicthesauri/IdBTopics"),
+            source: doPoolPartyGetChildrenAjaxRequest(scheme),
 
             icons:false,
 
